@@ -4,10 +4,11 @@ info:
   description: API for retrieving incidents from Cortex XDR.
   version: 1.0.0
 servers:
-  - url: 'https://api-gpf.xdr.eu.paloaltonetworks.com'
+  - url: https://api-gpf.xdr.eu.paloaltonetworks.com
     description: Cortex XDR API
+
 paths:
-  /v1/incidents/get_incidents:
+  /v1/incidents/get_incidents
     get:
       summary: Get all incidents from Cortex XDR
       description: Connects to the Cortex XDR API and retrieves a list of incidents.
@@ -42,7 +43,37 @@ paths:
           name: limit
           schema:
             type: integer
-          description: 'The number of incidents to return (optional, default is 100)'
+          description: The number of incidents to return (optional, default is 100)
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT # Or API key
+
+security:
+  - BearerAuth: []
+
 tags:
   - name: incidents
     description: API operations related to Cortex XDR incidents
+
+components:
+  schemas:
+    Incident:
+      type: object
+      properties:
+        incident_id:
+          type: string
+          description: The unique identifier of the incident.
+        description:
+          type: string
+          description: A description of the incident.
+        severity:
+          type: string
+          description: The severity level of the incident.
+        status:
+          type: string
+          description: The current status of the incident.
+
