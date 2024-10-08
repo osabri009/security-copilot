@@ -8,31 +8,30 @@ servers:
     description: Cortex XDR API
 
 paths:
-  /v1/incidents:
-    get:
-      summary: Get all incidents from Cortex XDR
-      description: Connects to the Cortex XDR API and retrieves a list of incidents.
-      responses:
-        description: A JSON array of incidents
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                type: object
-                properties:
-                  incident_id:
-                    type: string
-                    description: The unique ID of the incident
-                  description:
-                    type: string
-                    description: A brief description of the incident
-                  severity:
-                    type: string
-                    description: Severity of the incident
-                  status:
-                    type: string
-                    description: Status of the incident
+  /public_api/v1/incidents/get_incidents:
+    summary: Get all incidents from Cortex XDR
+    description: Connects to the Cortex XDR API and retrieves a list of incidents.
+    responses:
+       description: A JSON array of incidents
+       content:
+         application/json:
+           schema:
+             type: array
+             items:
+               type: object
+               properties:
+                 incident_id:
+                   type: string
+                   description: The unique ID of the incident
+                 description:
+                   type: string
+                   description: A brief description of the incident
+                 severity:
+                   type: string
+                   description: Severity of the incident
+                 status:
+                   type: string
+                   description: Status of the incident
 
 components:
   schemas:
