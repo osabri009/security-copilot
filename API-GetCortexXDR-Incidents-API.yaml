@@ -8,7 +8,7 @@ servers:
     description: Cortex XDR API
 
 paths:
-  /v1/incidents/get_incidents:
+  /v1/incidents:
     get:
       summary: Get all incidents from Cortex XDR
       description: Connects to the Cortex XDR API and retrieves a list of incidents.
