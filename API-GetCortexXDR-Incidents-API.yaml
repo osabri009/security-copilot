@@ -54,26 +54,3 @@ components:
 
 security:
   - BearerAuth: []
-
-tags:
-  - name: incidents
-    description: API operations related to Cortex XDR incidents
-
-components:
-  schemas:
-    Incident:
-      type: object
-      properties:
-        incident_id:
-          type: string
-          description: The unique identifier of the incident.
-        description:
-          type: string
-          description: A description of the incident.
-        severity:
-          type: string
-          description: The severity level of the incident.
-        status:
-          type: string
-          description: The current status of the incident.
-
