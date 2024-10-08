@@ -1,13 +1,11 @@
-
 openapi: 3.0.0
 info:
   title: Cortex XDR Incident Retrieval API
   description: API for retrieving incidents from Cortex XDR.
   version: 1.0.0
 servers:
-  - url: https://api-gpf.xdr.eu.paloaltonetworks.com
+  - url: 'https://api-gpf.xdr.eu.paloaltonetworks.com'
     description: Cortex XDR API
-
 paths:
   /v1/incidents/get_incidents:
     get:
@@ -44,8 +42,7 @@ paths:
           name: limit
           schema:
             type: integer
-          description: The number of incidents to return (optional, default is 100)
-
+          description: 'The number of incidents to return (optional, default is 100)'
 tags:
   - name: incidents
     description: API operations related to Cortex XDR incidents
