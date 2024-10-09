@@ -11,7 +11,6 @@ paths:
   /incidents:
     get:
       summary: Get all incidents from Cortex XDR
-      operationId: getIncidents
       tags:
         - Incidents
       parameters:
