@@ -1,70 +1,82 @@
-
-openapi: 3.0.1
+openapi: 3.0.0
 info:
-  title: Cortex XDR Incident Manager API
-  description: API to retrieve incidents from Cortex XDR.
+  title: Cortex XDR API
+  description: Retrieve detailed incidents from Cortex XDR.
   version: "1.0.0"
-  contact:
-    email: support@example.com
 servers:
-  - url: https://api-gpf.xdr.eu.paloaltonetworks.comv1
+  - url: https://api-gpf.xdr.eu.paloaltonetworks.com
+ 
 paths:
-  /incidents:
+  /public_api/v1/incidents/get_incidents/:
     get:
-      summary: Get all incidents from Cortex XDR
-      operationId: getIncidents
-      tags:
-        - Incidents
+      summary: Get All Incidents
+      description: Retrieve a list of incidents from Cortex XDR.
+      operationId: getAllIncidents
       parameters:
-        - name: limit
+        - name: page
           in: query
-          description: Number of incidents to retrieve
           required: false
+          description: The page number to retrieve.
           schema:
             type: integer
-            default: 10
+            example: 1
+        - name: limit
+          in: query
+          required: false
+          description: Number of incidents per page.
+          schema:
+            type: integer
+            example: 50
         - name: sort
           in: query
-          description: Sort incidents by date or severity
           required: false
+          description: Sort order of incidents (e.g., 'asc' or 'desc').
           schema:
             type: string
-            enum: [date, severity]
+            example: "desc"
       responses:
         '200':
-          description: List of incidents retrieved successfully
+          description: Successful retrieval of incidents.
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    incident_id:
-                      type: string
-                      description: Unique ID of the incident
-                    severity:
-                      type: string
-                      description: Severity level of the incident
-                    status:
-                      type: string
-                      description: Current status of the incident
-                    description:
-                      type: string
-                      description: Details about the incident
+                type: object
+                properties:
+                  reply:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        incident_id:
+                          type: string
+                          description: Unique identifier for the incident.
+                        severity:
+                          type: string
+                          description: Severity level of the incident.
+                        status:
+                          type: string
+                          description: Current status of the incident.
+                        creation_time:
+                          type: string
+                          format: date-time
+                          description: Time when the incident was created.
+                        last_modified:
+                          type: string
+                          format: date-time
+                          description: Last modification time of the incident.
         '400':
-          description: Bad request
+          description: Bad request or invalid parameters.
         '401':
-          description: Unauthorized
+          description: Unauthorized, API key is missing or incorrect.
         '500':
-          description: Internal server error
-
+          description: Internal server error.
+ 
 components:
   securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+ 
 security:
-  - BearerAuth: []
+  - apiKeyAuth: []
