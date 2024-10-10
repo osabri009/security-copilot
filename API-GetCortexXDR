@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: Cortex XDR Incident Retrieval API
+  description: API for retrieving incidents from Cortex XDR.
+  version: 1.0.0
+servers:
+  - url: https://api-gpf.xdr.eu.paloaltonetworks.com
+    description: Cortex XDR API
+
+paths:
+  /public_api/v1/incidents/get_incidents/:
+    get:
+      summary: Get all incidents from Cortex XDR
+      description: Connects to the Cortex XDR API and retrieves a list of incidents.
+      responses:
+        '200':
+          description: A JSON array of incidents
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    incident_id:
+                      type: string
+                      description: The unique ID of the incident
+                    description:
+                      type: string
+                      description: A brief description of the incident
+                    severity:
+                      type: string
+                      description: Severity of the incident
+                    status:
+                      type: string
+                      description: Status of the incident
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: The number of incidents to return (optional, default is 100)
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT # Or API key
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: incidents
+    description: API operations related to Cortex XDR incidents
+components:
+  schemas:
+    Incident:
+      type: object
+      properties:
+        incident_id:
+          type: string
+          description: The unique identifier of the incident.
+        description:
+          type: string
+          description: A description of the incident.
+        severity:
+          type: string
+          description: The severity level of the incident.
+        status:
+          type: string
+          description: The current status of the incident.
+
