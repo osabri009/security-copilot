@@ -52,12 +52,6 @@ components:
       scheme: bearer
       bearerFormat: JWT # Or API key
 
-security:
-  - BearerAuth: []
-
-tags:
-  - name: incidents
-components:
   schemas:
     Incident:
       type: object
@@ -75,3 +69,8 @@ components:
           type: string
           description: The current status of the incident.
 
+security:
+  - BearerAuth: []
+
+tags:
+  - name: incidents
