@@ -11,7 +11,7 @@ servers:
 
 paths:
     /incidents:
-        get:
+        post:
             operationId: getCortexXDRIncident
             summary: Get detailed incident information for a specific incident ID.
             parameters:
