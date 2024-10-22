@@ -8,7 +8,7 @@ servers:
  
 paths:
   /public_api/v1/incidents/get_incidents/:
-    get:
+    post:
       summary: Get All Incidents
       description: Retrieve a list of incidents from Cortex XDR.
       operationId: getAllIncidents
