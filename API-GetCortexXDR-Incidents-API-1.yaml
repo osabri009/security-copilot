@@ -5,7 +5,7 @@ info:
   version: "1.0.0"
 servers:
   - url: https://api-gpf.xdr.eu.paloaltonetworks.com
- 
+
 paths:
   /public_api/v1/incidents/get_incidents/:
     post:
@@ -57,13 +57,18 @@ paths:
           description: Unauthorized.
         '500':
           description: Internal server error.
- 
+
 components:
   securitySchemes:
     apiKeyAuth:
       type: apiKey
       in: header
-      name: x-api-key
- 
+      name: x-api-key  # This is for the API key
+    xdrAuthId:
+      type: apiKey
+      in: header
+      name: x-xdr-auth-id  # This is for the API key ID
+
 security:
   - apiKeyAuth: []
+  - xdrAuthId: []
