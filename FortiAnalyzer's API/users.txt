@@ -1,0 +1,52 @@
+openapi: 3.0.0
+
+info:
+  title: FortiAnalyzer Users API
+  description: Retrieve and manage users with access to FortiAnalyzer
+  version: "v1"
+
+servers:
+  - url: https://<your-fortianalyzer-url>/api/v2
+
+paths:
+  /users:
+    get:
+      operationId: getUsers
+      summary: Retrieve a list of users with access to FortiAnalyzer
+      parameters:
+        - in: query
+          name: role
+          schema:
+            type: string
+          required: false
+          description: Filter users by role (e.g., admin, read-only).
+      responses:
+        "200":
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponse"
+
+components:
+  schemas:
+    UserResponse:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            type: object
+            properties:
+              userId:
+                type: string
+                description: Unique identifier for the user.
+              username:
+                type: string
+                description: Username of the FortiAnalyzer user.
+              role:
+                type: string
+                description: Role of the user (e.g., admin, read-only).
+              status:
+                type: string
+                description: Status of the user account (e.g., active, disabled).
