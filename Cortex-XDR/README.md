@@ -18,7 +18,7 @@ This repository contains a custom plugin to integrate **Cortex XDR** with **Copi
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/yourusername/cortex-copilot-plugin.git
+   git clone https://github.com/EBLA-KW/security-copilot/tree/main/Cortex-XDR
    cd cortex-copilot-plugin
    ```
 
