@@ -17,7 +17,7 @@ Integrates **Cortex XDR** with Copilot, providing access to incidents, alerts, a
 ### 3. VirusTotal Plugin
 This plugin connects **VirusTotal** with Copilot, allowing security teams to perform file and URL reputation checks, access IOC data, and automate threat intelligence workflows.
 
-[View VirusTotal Plugin README](./README_VirusTotal.md)
+[View VirusTotal Plugin README](./VirusTotal)
 
 ## Setup and Usage
 
