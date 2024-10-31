@@ -18,7 +18,7 @@ This repository contains a custom plugin to integrate **FortiAnalyzer** with **C
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/EBLA-KW/security-copilot/tree/main/FortiAnalyzer
+   git clone https://github.com/EBLA-KW/security-copilot.git
    cd fortianalyzer-copilot-plugin
    ```
 
