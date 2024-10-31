@@ -1,4 +1,5 @@
-FortiAnalyzer Custom Plugin for Copilot for Security
+**FortiAnalyzer Custom Plugin for Copilot for Security**
+
 This repository contains a custom plugin to integrate FortiAnalyzer with Copilot for Security. This plugin enables security teams to access FortiAnalyzer data directly in Copilot, enhancing capabilities for incident response, threat detection, and network security monitoring.
 
 Features
