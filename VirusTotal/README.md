@@ -18,7 +18,7 @@ This repository contains a custom plugin to integrate **VirusTotal** with **Copi
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/yourusername/virustotal-copilot-plugin.git
+   git clone https://github.com/EBLA-KW/security-copilot/tree/main/VirusTotal.git
    cd virustotal-copilot-plugin
    ```
 
