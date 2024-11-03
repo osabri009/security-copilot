@@ -19,6 +19,11 @@ This plugin connects **VirusTotal** with Copilot, allowing security teams to per
 
 [View VirusTotal Plugin README](./VirusTotal)
 
+### 4. Info Blox (BloxOne) Plugin
+This plugin connects **BloxOne** with Copilot, BloxOne DDI provides a cloud-managed interface for automated DNS, DHCP and IP address management, and policy control across multiple locations
+
+[View VirusTotal Plugin README](./infoblox)
+
 ## Setup and Usage
 
 Each plugin has its own setup and configuration requirements, detailed in its respective README file. Be sure to configure API credentials for each platform in the provided configuration files.
