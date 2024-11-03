@@ -8,19 +8,19 @@ This repository contains OpenAPI specifications for interacting with the **Infob
 - **Endpoint**: `GET /dns/record`
 - **Description**: Retrieves a collection of DNS resource records.
 - **Usage**: Use this endpoint to list DNS records in an authoritative zone with optional filtering, pagination, and sorting.
-- **YAML Specification**: [infoblox_dns_records.yaml](./infoblox_dns_records.yaml)
+- **YAML Specification**: [infoblox_dns_records.yaml](./DNS_records.yaml)
 
 ### 2. Retrieve a DNS Resource Record by ID
 - **Endpoint**: `GET /dns/record/{id}`
 - **Description**: Retrieves a specific DNS resource record by its ID.
 - **Usage**: Use this endpoint to get details of an individual DNS record in an authoritative zone.
-- **YAML Specification**: [infoblox_dns_record.yaml](./infoblox_dns_record.yaml)
+- **YAML Specification**: [infoblox_dns_record.yaml](./DNS_record.yaml)
 
 ### 3. Increment Serial Number for SOA Record
 - **Endpoint**: `POST /dns/record/{id}/serial_increment`
 - **Description**: Increments the serial number for a specific SOA (Start of Authority) record.
 - **Usage**: Use this endpoint to update the serial number of an SOA record in an authoritative zone.
-- **YAML Specification**: [infoblox_soa_serial_increment.yaml](./infoblox_soa_serial_increment.yaml)
+- **YAML Specification**: [infoblox_soa_serial_increment.yaml](./SOA_serial_increment.yaml)
 
 ## Requirements
 
@@ -31,7 +31,7 @@ This repository contains OpenAPI specifications for interacting with the **Infob
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/yourusername/infoblox-bloxone-dns-api.git
+   git clone https://github.com/EBLA-KW/infoblox-bloxone-dns-api.git
    cd infoblox-bloxone-dns-api
    ```
 
